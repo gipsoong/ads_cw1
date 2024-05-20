@@ -12,3 +12,7 @@ class PropertyAgentDirector(PropertyAgent):
         self.year_start = year_start
         self.commission_from_agents = 0.05
         self.director_comm_sharing = 0.75
+
+    def __str__(self):
+        return (f"My commission from agents is {self.commission_from_agents} "
+                f"and the director's commission sharing is {self.director_comm_sharing}")
