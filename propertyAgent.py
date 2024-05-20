@@ -9,3 +9,6 @@ class PropertyAgent:
         self.company = company
         self.reg_num = reg_num
         self.year_start = year_start
+
+    def __str__(self):
+        return f"My registration number is {self.reg_num} and I started in the year {self.year_start}"
