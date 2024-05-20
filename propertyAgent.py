@@ -1,7 +1,8 @@
 
 
 class PropertyAgent:
-    agent_comm_sharing_rate = 0.7
+    agent_commission_rate = 0.01
+    agent_commission_sharing_rate = 0.7
 
     def __init__(self, not_sold, sold, company, reg_num, year_start):
         self.not_sold = not_sold

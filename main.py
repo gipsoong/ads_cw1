@@ -7,6 +7,7 @@ def main():
 
     print(agent_john)
     print(agent_john.not_sold)
-    print(agent_john.agent_comm_sharing_rate)
+    print(agent_john.agent_commission_rate)
+    print(agent_john.agent_commission_sharing_rate)
 
 main() # start program.
