@@ -9,6 +9,6 @@ class Property:
         self.completion_year = completion_year
         self.property_type = property_type
         self.area = area
-        self.commission_rate = commission_rate
+        self.commission_rate = 0.1
         self.valuation = valuation
 
