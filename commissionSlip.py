@@ -8,5 +8,11 @@ class CommissionSlip:
         self.commission_sharing_rate = commission_sharing_rate
 
     def calculate_commission(self):
-        print(f"Total sold {self.total_sold}, Commission Rate {self.commission_rate}"
-              f" and Commission Sharing Rate {self.commission_sharing_rate}")
+
+        amount_sold = 0
+        for i in self.total_sold:
+            amount_sold += i
+
+        net_commission = (amount_sold * self.commission_rate) * self.commission_sharing_rate
+
+        print(f"Commission earned for the year is ${net_commission}")

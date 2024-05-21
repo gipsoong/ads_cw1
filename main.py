@@ -6,7 +6,7 @@ from commissionSlip import CommissionSlip
 def main():
     """Start of program."""
     # creating agents
-    john = PropertyAgent(["1", "2", "3"], ["4", "5", "6"], "NexProp",
+    john = PropertyAgent(["1", "2", "3"], [250000, 400000, 350000], "NexProp",
                          100901, "2005")
 
     # creating directors
