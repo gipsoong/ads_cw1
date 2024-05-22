@@ -1,9 +1,8 @@
 from property import Property
-from propertyAgent import PropertyAgent
+from propertyAgentDirector import PropertyAgentDirector
 
 
 def main():
-    """Start of program."""
     # creating Property instances to store in PropertyAgent's sold/unsold attributes
     property_1 = Property("1 Duxton Road", 809490, "21 Years", 2003,
                           "HDB", "990 (sqft)", 680000)
@@ -20,11 +19,11 @@ def main():
     property_5 = Property("1 Duxton Road", 809490, "21 Years", 2003,
                           "HDB", "990 (sqft)", 602000)
 
-    john = PropertyAgent("John", "Huttons", 309872,
-                         2004, [property_1, property_3],
-                         [property_2, property_4, property_5])
+    janice = PropertyAgentDirector("John", "Huttons", 309872,
+                                   2004, [property_1, property_3],
+                                   [property_2, property_4, property_5])
 
-    print(john)
+    print(janice)
 
 
 main()
