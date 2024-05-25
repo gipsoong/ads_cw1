@@ -16,11 +16,8 @@ class PropertyAgentDirector(PropertyAgent):
 
     def __str__(self):
         # check to see if commission sharing rate is valid
-        if self.designation == "Director":
-            if self.commission_sharing_rate < 0.75 or self.commission_sharing_rate > 0.9:
-                return "Error, commission sharing rate is invalid. It should be between 0.75 and 0.9"
-            else:
-                pass
+        if self.commission_sharing_rate < 0.75 or self.commission_sharing_rate > 0.9:
+            return "Error, commission sharing rate is invalid. It should be between 0.75 and 0.9"
         else:
             pass
 

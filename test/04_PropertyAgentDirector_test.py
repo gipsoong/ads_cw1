@@ -1,4 +1,5 @@
 from property import Property
+from propertyAgent import PropertyAgent
 from propertyAgentDirector import PropertyAgentDirector
 
 

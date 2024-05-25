@@ -13,6 +13,9 @@ class PropertyAgent:
         self.commission_sharing_rate = 0.7
         self.designation = "Agent"
 
+    def calculate_net_commission(self):
+        pass
+
     def __str__(self):
         # calculating the total value of properties sold
         total_sold = 0
