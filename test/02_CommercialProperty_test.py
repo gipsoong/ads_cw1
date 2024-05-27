@@ -5,7 +5,7 @@ def main():
     """Start of program."""
     viridian = CommercialProperty("10th Viridian City Avenue", 9401488, "5 years",
                                   2001, "Commercial", "2150 sqft", 1250000000,
-                                  "error")
+                                  "Office")
 
     print(viridian.get_address())
     print(viridian.get_postal_code())

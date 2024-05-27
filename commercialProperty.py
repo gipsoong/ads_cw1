@@ -7,13 +7,13 @@ class CommercialProperty(Property):
                  commercial_property_type):
         super().__init__(address, postal_code, tenure, completion_year, property_type, area, valuation)
         self.commercial_property_type = commercial_property_type  # why must this be the first?
-        self.address = self.address
-        self.postal_code = self.postal_code
-        self.tenure = self.tenure
-        self.completion_year = self.completion_year
-        self.property_type = self.property_type
-        self.area = self.area
-        self.valuation = self.valuation
+        self.address = address
+        self.postal_code = postal_code
+        self.tenure = tenure
+        self.completion_year = completion_year
+        self.property_type = property_type
+        self.area = area
+        self.valuation = valuation
 
     def check_commercial_property_type(self):
         """A function to validate if commercial_property_type is one of the expected values: Office, Flatted Factory

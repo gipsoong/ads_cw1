@@ -2,17 +2,33 @@ class CommissionSlip:
     """Initialise the attributes of "CommissionSlip"""
 
     # CalculateCommission calculates the annual commission earned by an agent/director
-    def __init__(self, total_sold, commission_rate, commission_sharing_rate):
-        self.total_sold = total_sold
-        self.commission_rate = commission_rate
-        self.commission_sharing_rate = commission_sharing_rate
+    def __init__(self, x):
+        self.x = x
 
-    def calculate_commission(self):
+    def calculate_agent_commission(self):
+        comm_sharing_rate = self.x.commission_sharing_rate
+        print(f"----------\n"
+              f"COMMISSION SLIP of Property Agent {self.x.name}:")
+        for i in self.x.sold:
+            print(f"- {i.address}, transacted at P${i.valuation:,.2f}."
+                  f" Net commission earned = P${((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f}\n"
+                  f"({i.valuation:,.2f} * {i.commission_rate} * {comm_sharing_rate} ="
+                  f" {((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f})")
 
-        amount_sold = 0
-        for i in self.total_sold:
-            amount_sold += i
+    def calculate_director_commission(self):
+        comm_sharing_rate = self.x.commission_sharing_rate
+        print(f"----------\n"
+              f"COMMISSION SLIP of Property Director {self.x.name}:")
+        for i in self.x.sold:
+            print(f"- {i.address}, transacted at P${i.valuation:,.2f}."
+                  f" Net commission earned = P${((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f}\n"
+                  f"({i.valuation:,.2f} * {i.commission_rate} * {comm_sharing_rate} ="
+                  f" {((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f})")
 
-        net_commission = (amount_sold * self.commission_rate) * self.commission_sharing_rate
+    def get_commission_slip(self):
+        """Simple function to check class name, then calls the corresponding function"""
+        if type(self.x).__name__ == 'PropertyAgentDirector':
+            return self.calculate_director_commission()
 
-        print(f"Commission earned for the year is ${net_commission}")
+        else:
+            self.calculate_agent_commission()

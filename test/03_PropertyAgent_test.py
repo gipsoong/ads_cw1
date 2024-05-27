@@ -5,26 +5,35 @@ from propertyAgent import PropertyAgent
 def main():
     """Start of program."""
     # creating Property instances to store in PropertyAgent's sold/unsold attributes
-    property_1 = Property("1 Duxton Road", 809490, "21 Years", 2003,
-                          "HDB", "990 (sqft)", 680000)
+    pewter_ave = Property("43 Pewter Avenue", 809490, "21 Years", 2003,
+                          "HDB", "990 (sqft)", 450000)
 
-    property_2 = Property("1 Duxton Road", 809490, "21 Years", 2003,
-                          "HDB", "990 (sqft)", 500000)
+    viridian_drive = Property("19 Viridian Drive", 809490, "21 Years", 2003,
+                              "Landed", "1500 (sqft)", 1500000)
 
-    property_3 = Property("1 Duxton Road", 809490, "21 Years", 2003,
-                          "HDB", "990 (sqft)", 475000)
+    cerulean_cove = Property("3 Cerulean Cove", 809490, "21 Years", 2003,
+                             "Landed", "1700 (sqft)", 2500000)
 
-    property_4 = Property("1 Duxton Road", 809490, "21 Years", 2003,
-                          "HDB", "990 (sqft)", 486500)
+    vermilion_shore = Property("8 Vermilion Shore", 809490, "21 Years", 2003,
+                               "Condo", "700 (sqft)", 900000)
 
-    property_5 = Property("1 Duxton Road", 809490, "21 Years", 2003,
-                          "HDB", "990 (sqft)", 602000)
+    pewter_road = Property("21 Pewter Road", 809490, "21 Years", 2021,
+                           "Condo", "400 (sqft)", 850000)
 
-    john = PropertyAgent("John", "Huttons", 309872,
-                         2004, [property_1, property_3],
-                         [property_2, property_4, property_5])
+    brock = PropertyAgent("Brock", "Pewter Estate", 309872,
+                          2004, [pewter_ave, cerulean_cove],
+                          [viridian_drive, vermilion_shore, pewter_road])
 
-    print(john)
+    print(brock.get_name())
+    print(brock.get_company())
+    print(brock.get_registration_number())
+    print(brock.get_year_start())
+    brock.get_properties_unsold()
+    print(brock.get_properties_sold())
+    print(brock.get_commission_sharing_rate())
+    print(brock.calculate_commission())
+
+    print(brock)
 
 
 main()

@@ -1,6 +1,8 @@
 from property import Property
+from commercialProperty import CommercialProperty
 from propertyAgent import PropertyAgent
 from propertyAgentDirector import PropertyAgentDirector
+from commissionSlip import CommissionSlip
 
 
 def main():
@@ -60,19 +62,11 @@ def main():
                                      [cinnabar_heights, saffron_arc], [brock, misty],
                                      0.05, 0.8)
 
-    print(giovanni.get_name())
-    print(giovanni.get_company())
-    print(giovanni.get_registration_number())
-    print(giovanni.get_year_start())
-    print(giovanni.get_properties_unsold())
-    print(giovanni.get_properties_sold())
-    print(giovanni.get_commission_sharing_rate())
-    giovanni.get_agents()
-    giovanni.get_commission_rate_from_agents()
-    giovanni.get_commission_from_agents()
-    print(giovanni.calculate_commission())
+    misty_commission_slip = CommissionSlip(misty)
+    misty_commission_slip.get_commission_slip()
 
-    print(giovanni)
+    giovanni_commission_slip = CommissionSlip(giovanni)
+    giovanni_commission_slip.get_commission_slip()
 
 
 main()
