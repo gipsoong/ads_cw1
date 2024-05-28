@@ -8,6 +8,7 @@ class CommissionSlip:
     def calculate_agent_commission(self):
         comm_sharing_rate = self.x.commission_sharing_rate
         total_commission = 0
+        agency_cut = self.x.calculate_agency_share()
         print(f"----------\n"
               f"COMMISSION SLIP of Property Agent {self.x.name}:")
         for i in self.x.sold:
@@ -16,7 +17,8 @@ class CommissionSlip:
             print(f"- {i.address}, transacted at P${i.valuation:,.2f}."
                   f" Net commission earned = P${((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f}\n"
                   f"({i.valuation:,.2f} * {i.commission_rate} * {comm_sharing_rate} ="
-                  f" {((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f})")
+                  f" {((i.valuation * i.commission_rate) * comm_sharing_rate):,.2f})"
+                  f" After deduction of {agency_cut:,.2f}")
 
         print(f"TOTAL COMMISSION: P${total_commission:,.2f}")
 
