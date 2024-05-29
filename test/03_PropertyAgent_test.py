@@ -28,7 +28,7 @@ def main():
     print(brock.get_company())
     print(brock.get_registration_number())
     print(brock.get_year_start())
-    brock.get_properties_unsold()
+    print(brock.get_properties_unsold())
     print(brock.get_properties_sold())
     print(brock.get_commission_sharing_rate())
     print(brock.calculate_commission())

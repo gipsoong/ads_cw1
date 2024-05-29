@@ -63,10 +63,12 @@ def main():
                                      0.05, 0.8)
 
     misty_commission_slip = CommissionSlip(misty)
-    misty_commission_slip.get_commission_slip()
-
+    brock_commission_slip = CommissionSlip(brock)
     giovanni_commission_slip = CommissionSlip(giovanni)
-    giovanni_commission_slip.get_commission_slip()
+
+    print(misty_commission_slip.get_commission_slip())
+    print(brock_commission_slip.get_commission_slip())
+    print(giovanni_commission_slip.get_commission_slip())
 
 
 main()

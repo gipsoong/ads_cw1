@@ -38,7 +38,8 @@ class CommercialProperty(Property):
         if self.check_commercial_property_type():
             return (f"- - - - - - - - - - \n"
                     # modifying this part of the string to better suit CommercialProperty
-                    f"{self.address} ({self.property_type} {self.commercial_property_type}) {self.postal_code}, completed "
+                    f"{self.address} ({self.property_type} {self.commercial_property_type}) {self.postal_code}, "
+                    f"completed"
                     f"in {self.completion_year}. \n"
                     f"Total area of {self.area}, valued at P${self.valuation:,.2f} \n"
                     f"Current tenure is {self.tenure} \n"
@@ -48,4 +49,3 @@ class CommercialProperty(Property):
         else:
             return (f"ERROR! Commercial Property Type '{self.commercial_property_type}' is invalid. Ensure that it is"
                     f" either 'Office', 'Factory' or 'Flatted Factory'")
-

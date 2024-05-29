@@ -26,28 +26,34 @@ class PropertyAgentDirector(PropertyAgent):
                     f"{(self.commission_sharing_rate * 10):.0f}%")
 
     def get_agents(self):
-        print(f"----------\n"
-              f"AGENTS UNDER {self.name}:")
+        agents_string = ""
 
         for i in self.agents:
-            print(f"{i.name}, {i.registration_number}")
+            if i == self.agents[-1]:
+                agents_string += f"{i.name}, {i.registration_number}"
+            else:
+                agents_string += f"{i.name}, {i.registration_number}\n"
+
+        return (f"----------\n"
+                f"AGENTS UNDER {self.name}:\n"
+                f"{agents_string}")
 
     def get_commission_rate_from_agents(self):
-        print(f"----------\n"
-              f"COMMISSION RATE FROM AGENTS:\n"
-              f"{(self.commission_rate_from_agents * 100):.0f}%")
+        return (f"----------\n"
+                f"COMMISSION RATE FROM AGENTS:\n"
+                f"{(self.commission_rate_from_agents * 100):.0f}%")
 
     def get_commission_from_agents(self):
         agents_total_commission = 0
-        print(f"----------\n"
-              f"TOTAL COMMISSION FROM AGENTS")
         for i in self.agents:
             for x in i.sold:
                 agents_total_commission += (x.valuation * x.commission_rate) * i.commission_sharing_rate
 
         total_commission_from_agents = agents_total_commission * self.commission_rate_from_agents
 
-        print(f"P${total_commission_from_agents:,.2f}")
+        return (f"----------\n"
+                f"TOTAL COMMISSION FROM AGENTS\n"
+                f"P${total_commission_from_agents:,.2f}")
 
     def calculate_commission_from_agents(self):
         agents_total_commission = 0

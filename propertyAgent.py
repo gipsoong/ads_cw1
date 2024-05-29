@@ -26,18 +26,28 @@ class PropertyAgent:
                 f"YEAR STARTED: {self.year_start}")
 
     def get_properties_unsold(self):
-        print(f"----------\n"
-              f"UNSOLD PROPERTIES:")
-
+        unsold_string = ""
         for i in self.unsold:
-            print(f"{i.address} ({i.property_type}) {i.postal_code}, valued at P${i.valuation:,.0f}")
+            if i == self.unsold[-1]:
+                unsold_string += f"{i.address} ({i.property_type}) {i.postal_code}, valued at P${i.valuation:,.0f}"
+            else:
+                unsold_string += f"{i.address} ({i.property_type}) {i.postal_code}, valued at P${i.valuation:,.0f}\n"
+
+        return (f"----------\n"
+                f"UNSOLD PROPERTIES:\n"
+                f"{unsold_string}")
 
     def get_properties_sold(self):
-        print(f"-----------\n"
-              f"SOLD PROPERTIES:")
-
+        sold_string = ""
         for i in self.sold:
-            print(f"{i.address} ({i.property_type}) {i.postal_code}, sold at P${i.valuation:,.0f}")
+            if i == self.sold[-1]:
+                sold_string += f"{i.address} ({i.property_type}) {i.postal_code}, valued at P${i.valuation:,.0f}"
+            else:
+                sold_string += f"{i.address} ({i.property_type}) {i.postal_code}, valued at P${i.valuation:,.0f}\n"
+
+        return (f"----------\n"
+                f"SOLD PROPERTIES:\n"
+                f"{sold_string}")
 
     def get_total_sold(self):
         total_sold = 0
@@ -62,6 +72,10 @@ class PropertyAgent:
         gross_commission = self.calculate_gross_commission()
         net_commission = gross_commission * self.commission_sharing_rate
         return net_commission
+
+    def calculate_agency_share_rate(self):
+        agency_cut_rate = 1 - self.commission_sharing_rate
+        return agency_cut_rate
 
     def calculate_agency_share(self):
         gross_commission = self.calculate_gross_commission()

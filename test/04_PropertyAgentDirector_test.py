@@ -67,9 +67,9 @@ def main():
     print(giovanni.get_properties_unsold())
     print(giovanni.get_properties_sold())
     print(giovanni.get_commission_sharing_rate())
-    giovanni.get_agents()
-    giovanni.get_commission_rate_from_agents()
-    giovanni.get_commission_from_agents()
+    print(giovanni.get_agents())
+    print(giovanni.get_commission_rate_from_agents())
+    print(giovanni.get_commission_from_agents())
     print(giovanni.calculate_commission())
 
     print(giovanni)
