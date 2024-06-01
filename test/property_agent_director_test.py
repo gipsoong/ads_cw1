@@ -1,6 +1,6 @@
 from property import Property
-from propertyAgent import PropertyAgent
-from propertyAgentDirector import PropertyAgentDirector
+from property_agent import PropertyAgent
+from property_agent_director import PropertyAgentDirector
 
 
 def main():
@@ -54,11 +54,19 @@ def main():
     cinnabar_heights = Property("2 Cinnabar Heights", 110005, "15 Years", 1999,
                                 "Landed", "990 (sqft)", 3850000)
 
-    # creating a PropertyAgentDirectory
+    # giovanni utilizes the correct attributes,
+    # expected outcome of the methods returning string + data without any errors
     giovanni = PropertyAgentDirector("Giovanni", "Rocket Realtors", 107525,
                                      1995, [fuchsia_estate],
                                      [cinnabar_heights, saffron_arc], [brock, misty],
                                      0.05, 0.8)
+
+    # blaine uses the wrong attributes on purpose, to test the validation methods,
+    # expected outcome of some ERROR messages
+    blaine = PropertyAgentDirector(123, 123, "Cinnabar",
+                                   "1950", [fuchsia_estate],
+                                   [cinnabar_heights, saffron_arc], [brock, misty],
+                                   0.5, 0.8)
 
     print(giovanni.get_name())
     print(giovanni.get_company())
@@ -68,11 +76,25 @@ def main():
     print(giovanni.get_properties_sold())
     print(giovanni.get_commission_sharing_rate())
     print(giovanni.get_agents())
-    print(giovanni.get_commission_rate_from_agents())
+    print(giovanni.get_overriding_rate())
     print(giovanni.get_commission_from_agents())
     print(giovanni.calculate_commission())
 
     print(giovanni)
+
+    print(blaine.get_name())
+    print(blaine.get_company())
+    print(blaine.get_registration_number())
+    print(blaine.get_year_start())
+    print(blaine.get_properties_unsold())
+    print(blaine.get_properties_sold())
+    print(blaine.get_commission_sharing_rate())
+    print(blaine.get_agents())
+    print(blaine.get_overriding_rate())
+    print(blaine.get_commission_from_agents())
+    print(blaine.calculate_commission())
+
+    print(blaine)
 
 
 main()
